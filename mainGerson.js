@@ -18,9 +18,18 @@ var Susie = document.getElementById("Susie");
 let sx = 10;
 let sy = 46;
 
+var GersonBody = document.getElementById("GersonBody");
+let GBx = 220;
+let GBy = 50;
+
+var GersonHear = document.getElementById("GersonHear");
+let GHx = 230;
+let GHy = 40;
+
 ctx.drawImage(image, dx, dy, 10, 10);
 
 cycle = 0;
+
 
 setInterval(() => {
   ctx.fillStyle = "black";
@@ -39,6 +48,28 @@ setInterval(() => {
     sy,
     54,
     45
+  );
+  ctx.drawImage(
+    GersonHear,
+    1525 + 56 * (Math.floor(cycle / 7) % 5),
+    187,
+    55,
+    33,
+    GHx,
+    GHy,
+    55,
+    33
+  );
+  ctx.drawImage(
+    GersonBody,
+    571 + 68 * (Math.floor(cycle / 7) % 14),
+    181,
+    67,
+    39,
+    GBx,
+    GBy,
+    67,
+    39
   );
 
   ctx.strokeStyle = "green";
@@ -78,5 +109,6 @@ document.addEventListener("keydown", (event) => {
 });
 /* taille
 Susie : 60 51
-Gerson : 
+GersonBody : 67 39
+GersonHear : 55 33
 */
