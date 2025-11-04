@@ -1,8 +1,11 @@
 var canvas = document.querySelector("canvas");
 var ctx = canvas.getContext("2d");
+ctx.imageSmoothingEnabled = false;
 ctx.fillStyle = "black";
 ctx.fillRect(0, 0, 0, 0); // le canva fais 290 pour x et 145 pour y
 ctx.fillStyle = "red";
+
+const DEBUG = false;
 
 ctx.strokeStyle = "green";
 ctx.strokeRect(90, 35, 105, 75);
@@ -72,7 +75,7 @@ setInterval(() => {
   ctx.strokeStyle = "green";
   ctx.strokeRect(101, 27, 90, 90);
 
-  ctx.fillRect(x, y, 4, 4);
+  if (DEBUG) ctx.fillRect(x, y, 4, 4);
   cycle++;
 }, 1000 / 60);
 
